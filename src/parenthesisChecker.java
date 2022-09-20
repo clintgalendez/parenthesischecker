@@ -5,7 +5,6 @@ public class parenthesisChecker {
         int TEST_CASE_NUM;
         Scanner SCANNER_INPUT = new Scanner(System.in);
 
-        //loops on checking if the user inputs an integer
         while (true) {
             try {
                 System.out.print("Enter the number of test cases: ");
@@ -16,7 +15,6 @@ public class parenthesisChecker {
                 System.out.println("Please try again.");
             }
         }
-
 
         String[] TEST_CASES = new String[TEST_CASE_NUM];
         for (int i = 0; i < TEST_CASE_NUM; i++) {
