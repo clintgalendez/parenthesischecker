@@ -29,13 +29,17 @@ public class parenthesisChecker {
         }
     }
 
-    public static boolean checkBalance(String TEST_CASES) {
-        stack PARENTHESIS_STACK = new stack(TEST_CASES.length());
-        for (int i = 0; i < TEST_CASES.length(); i++) {
-            char ch = TEST_CASES.charAt(i);
-            if (ch == '(') {
-                PARENTHESIS_STACK.push(ch);
-            } else if (ch == ')') {
+    public static boolean checkBalance(String TEST_CASE) {
+        stack PARENTHESIS_STACK = new stack(TEST_CASE.length());
+
+        for (int i = 0; i < TEST_CASE.length(); i++) {
+            char CURRENT_CHAR = TEST_CASE.charAt(i);
+
+            if (CURRENT_CHAR == '(') {
+                PARENTHESIS_STACK.push(CURRENT_CHAR);
+            }
+
+            else if (CURRENT_CHAR == ')') {
                 if (PARENTHESIS_STACK.isEmpty()) {
                     return false;
                 } else {
@@ -43,6 +47,7 @@ public class parenthesisChecker {
                 }
             }
         }
+
         return PARENTHESIS_STACK.isEmpty();
     }
 }
